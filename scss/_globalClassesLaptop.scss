@@ -1,0 +1,102 @@
+// _fca-mobile.scss
+
+@mixin fca-flex($directions, $prefix: "l-") {
+  @each $name, $value in $directions {
+    .#{$prefix}fca-flex-#{$name} {
+      display: flex;
+      flex-direction: $value;
+    }
+  }
+}
+
+@include fca-flex((
+  'row': row,
+  'row-rev': row-reverse,
+  'col': column,
+  'col-rev': column-reverse
+));
+
+@mixin fca-grid($max, $prefix: "l-") {
+  @for $i from 1 through $max {
+    .#{$prefix}fca-grid-#{$i} {
+      display: grid;
+      grid-template-columns: repeat(#{$i}, minmax(100px, 1fr));
+      gap: 1rem;
+    }
+  }
+}
+
+@include fca-grid(10);
+
+@mixin fca-utilities($max: 40, $prefix: "l-") {
+  @for $i from 1 through $max {
+    .#{$prefix}fca-m-#{$i}  { margin: #{$i}px; }
+    .#{$prefix}fca-mt-#{$i} { margin-top: #{$i}px; }
+    .#{$prefix}fca-mb-#{$i} { margin-bottom: #{$i}px; }
+    .#{$prefix}fca-ml-#{$i} { margin-left: #{$i}px; }
+    .#{$prefix}fca-mr-#{$i} { margin-right: #{$i}px; }
+
+    .#{$prefix}fca-p-#{$i}  { padding: #{$i}px; }
+    .#{$prefix}fca-pt-#{$i} { padding-top: #{$i}px; }
+    .#{$prefix}fca-pb-#{$i} { padding-bottom: #{$i}px; }
+    .#{$prefix}fca-pl-#{$i} { padding-left: #{$i}px; }
+    .#{$prefix}fca-pr-#{$i} { padding-right: #{$i}px; }
+
+    .#{$prefix}fca-rad-#{$i} { border-radius: #{$i}px; }
+    .#{$prefix}fca-rad-t-#{$i} {
+      border-top-left-radius: #{$i}px;
+      border-top-right-radius: #{$i}px;
+    }
+    .#{$prefix}fca-rad-b-#{$i} {
+      border-bottom-left-radius: #{$i}px;
+      border-bottom-right-radius: #{$i}px;
+    }
+    .#{$prefix}fca-rad-l-#{$i} {
+      border-top-left-radius: #{$i}px;
+      border-bottom-left-radius: #{$i}px;
+    }
+    .#{$prefix}fca-rad-r-#{$i} {
+      border-top-right-radius: #{$i}px;
+      border-bottom-right-radius: #{$i}px;
+    }
+
+    .#{$prefix}fca-gap-#{$i}   { gap: #{$i}px; }
+    .#{$prefix}fca-gap-r-#{$i} { row-gap: #{$i}px; }
+    .#{$prefix}fca-gap-c-#{$i} { column-gap: #{$i}px; }
+  }
+}
+
+@include fca-utilities();
+
+
+
+
+@mixin fca-combined-flex-align {
+  $justify: (
+    js: flex-start,
+    je: flex-end,
+    jc: center,
+    jsb: space-between,
+    jsa: space-around,
+    jse: space-evenly
+  );
+
+  $align: (
+    ais: flex-start,
+    aie: flex-end,
+    aic: center,
+    aib: baseline,
+    aist: stretch
+  );
+
+  @each $jkey, $jval in $justify {
+    @each $akey, $aval in $align {
+      .l-fca-#{$jkey}-#{$akey} {
+        justify-content: #{$jval};
+        align-items: #{$aval};
+      }
+    }
+  }
+}
+
+@include fca-combined-flex-align();

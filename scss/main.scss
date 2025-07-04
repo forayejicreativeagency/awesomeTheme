@@ -1,0 +1,24 @@
+@import 'resets';
+@import 'fonts';
+@import 'colors';
+@import 'globalClasses';
+
+:root {
+    --splr: 165px;
+    --sptb: 20px;
+    --page-width: 1920px;
+}
+
+.fca-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &>.fca-section-inner {
+        padding: var(--sptb) var(--splr);
+        max-width: var(--page-width);
+        width: 100%;
+        background: rgb(var(--theme-red), var(--opacity-5));
+    }
+}

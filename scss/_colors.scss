@@ -1,0 +1,23 @@
+:root {
+  --theme-blue: 1, 56, 65;
+  --theme-green: 3, 190, 106;
+  --theme-yellow: 255, 215, 131;
+  --theme-red: 255, 0, 0;
+  --background-body: 245, 245, 245;
+  --white: 255, 255, 255;
+
+  --opacitu-5: 0.05;
+  --opacity-10: 0.1;
+  --opacity-20: 0.2;
+  --opacity-30: 0.3;
+  --opacity-40: 0.4;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+  --opacity-80: 0.8;
+  --opacity-90: 0.9;
+  --opacity-100: 1;
+
+  --border-general: 0.5px solid rgb(var(--theme-blue), var(--opacity-20));
+  --radius-general: 20px;
+}
