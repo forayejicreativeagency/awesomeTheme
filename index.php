@@ -2,12 +2,19 @@
 // Start capturing content
 ob_start();
 ?>
+
+
 <!-- Write the main page content here -->
- <section class="fca-section">
-    <div class="fca-section-inner">
-        Hello World
+ <!-- Site Header -->
+ <header id="siteHeader" class="fca-section">
+    <div class="fca-section-inner fca-flex-row fca-jsb-aic">
+        <a href="/" class="fca-site-logo">
+            <img src="./images/fariowala.svg" alt="" class="site-logo-icon">
+        </a>
     </div>
- </section>
+ </header>
+
+
 
 <?php
 // Assign the buffered content to $content

@@ -41,7 +41,6 @@
         }
     </script>
 
-
-    <title>Awesome App</title>
+    <title>Fariowala - Awesome Theme</title>
 </head>
 <body>
